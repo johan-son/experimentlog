@@ -7,14 +7,16 @@
 
 /*---offwhite and offblack---*/
 :root {
-    --bg: #D3FFDB;
-    --text: #3F00FF;
-    --blue: #FF3300;
+    --bg: #d8dfdc;
+    --text: #3f00ff;
+    --blue: #ff3300;
 }
 body {
     background-color: var(--bg);
     font-family: "Atkinson Hyperlegible", sans-serif;
-    background-image: url(https://i.ibb.co/zWZFBgr2/img-2026-04-20-09-21-58.png);
+    background-image: url(https://i.ibb.co/1GmzCfSc/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .title {
@@ -25,9 +27,9 @@ body {
 }
 
 hr {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-style: 0.5px solid;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border: 1.5px solid;
     color: var(--text);
 }
 
@@ -42,8 +44,6 @@ p {
     width: 95%;
 }
 
-
-
 iframe {
     width: 100%;
     border: 1px solid;
@@ -52,7 +52,7 @@ iframe {
 h1 {
     font-family: "Spline Sans Mono", monospace;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 400%;
     width: 800px;
     color: var(--text);
@@ -69,6 +69,18 @@ h5 {
     padding-bottom: 0.5em;
 }
 
+.name {
+    text-transform: uppercase;
+    position: absolute;
+    background-color: var(--text);
+    color: var(--bg);
+    padding: .3em;
+    margin: .2em 0;
+    width: fit-content;
+    border: 2px solid;
+    right: .5em;
+}
+
 .container {
     display: grid;
     padding-left: 4em;
@@ -82,6 +94,7 @@ h5 {
         "sd-l main"
         "sd-l main";
 }
+
 
 /*side by side containers*/
 .flex-container {
@@ -108,8 +121,9 @@ main {
 }
 .sidebar-l {
     grid-area: sd-l;
+    height: 100vh;
     position: fixed;
-    border-left: 2px solid;
+    border-left: 2px dashed;
     border-color: var(--text);
 }
 
@@ -138,7 +152,7 @@ button {
     border-color: var(--text);
     border-width: 2px;
     border-style: solid;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 /*active and hover colour*/
@@ -148,19 +162,15 @@ button {
     color: var(--bg);
 }
 
-.anchor-collapsible {
-    color: red;
-}
 
 .content {
     margin: 0;
     display: none;
     overflow: hidden;
-    border-color: var(--text);
-    border-width: 1px;
-    padding-bottom: 2em;
+    border-left: dashed 2px var(--text);
+    padding-left: 0.5em;
+    margin-bottom: 2em;
 }
-
 
 .content p {
     padding: 0;
@@ -185,11 +195,14 @@ ul {
 
 li {
     text-transform: uppercase;
+    background-color: var(--bg);
     font-size: 1.3em;
-    padding: 1em;
+    padding: 0.8em;
     margin-top: 5em;
     list-style: none;
     border-bottom: 2px solid;
+    border-top: 2px solid;
+    border-right: 2px solid;
     border-color: var(--text);
 }
 
@@ -216,13 +229,13 @@ a {
 
 a:hover {
     background-color: var(--text);
+    background-attachment: fixed;
     color: var(--bg);
     margin-top: 1em;
     border-color: var(--text);
 }
 
 /*hover anchors*/
-/*hover notes*/
 .note {
     position: relative;
     cursor: pointer;
@@ -247,12 +260,10 @@ a:hover {
 .asterisk {
     color: var(--blue);
     font-size: 3em;
-    mix-blend-mode: multiply;
+    mix-blend-mode: none;
     padding: 0;
     margin: 0;
 }
-
-
 
 /*
 footer {
@@ -283,6 +294,13 @@ footer {
         width: auto;
     }
 
+    .sidebar-l {
+        grid-area: sd-l;
+        height: 100vh;
+        border-left: 2px dashed;
+        border-color: var(--text);
+    }
+
     li {
         text-transform: uppercase;
         font-size: 1em;
@@ -299,6 +317,10 @@ footer {
     h1 {
         font-size: 400%;
         width: 600px;
+    }
+    
+    .floatingimages {
+        display: none;
     }
 
     /*make this so that it stays within the margin do this later*/
